@@ -8,7 +8,7 @@ function banner(){
      // 动态生成轮播图结构
      $.ajax({
         type:'get',
-        url:'http://157.122.54.189:9094/api/public/v1/home/swiperdata',
+        url:'home/swiperdata',
         dataType:'json',
         success:function(result){
             if(result.meta.status == 200){
@@ -31,7 +31,7 @@ function banner(){
 function nav(){
     $.ajax({
         type:'get',
-        url:'http://157.122.54.189:9094/api/public/v1/home/catitems',
+        url:'home/catitems',
         dataType:'json',
         success:function(result){
             console.log(result)
@@ -42,7 +42,7 @@ function nav(){
 function goodsList(){
     $.ajax({
         type:'get',
-        url:'http://157.122.54.189:9094/api/public/v1/home/goodslist',
+        url:'home/goodslist',
         dataType:'json',
         success:function(result){
             console.log(result)

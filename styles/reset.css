@@ -92,10 +92,11 @@ ul {
   list-style: none;
 }
 .clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  height: 0;
-  font-size: 0;
+  content: "020"; 
+    display: block; 
+    font-size: 0px;
+    line-height: 0px;
+    height: 0; 
+    clear: both; 
+    visibility: hidden;  
 }
