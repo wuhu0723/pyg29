@@ -1,6 +1,7 @@
 $(function(){
     banner()
     // nav()
+    goodsList()
 })
 
 function banner(){
@@ -31,6 +32,17 @@ function nav(){
     $.ajax({
         type:'get',
         url:'http://157.122.54.189:9094/api/public/v1/home/catitems',
+        dataType:'json',
+        success:function(result){
+            console.log(result)
+        }
+    })
+}
+
+function goodsList(){
+    $.ajax({
+        type:'get',
+        url:'http://157.122.54.189:9094/api/public/v1/home/goodslist',
         dataType:'json',
         success:function(result){
             console.log(result)

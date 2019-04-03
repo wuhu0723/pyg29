@@ -91,6 +91,14 @@ ol,
 ul {
   list-style: none;
 }
+.clearfix::before {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
 .layout {
   width: 100vw;
   height: 100vh;
@@ -106,6 +114,7 @@ ul {
 }
 .pyg_content {
   flex: 1;
+  overflow: scroll;
 }
 .pyg_footer {
   height: 45px;
@@ -124,4 +133,44 @@ ul {
 .pyg_nav > a > img {
   width: 50%;
   display: inline-block;
+}
+.pyg_goodsList {
+  padding: 10px;
+}
+.pyg_goodsList .pyg_pbox {
+  width: 100%;
+  padding-bottom: 5px;
+}
+.pyg_goodsList .pyg_pbox > img {
+  width: 100%;
+  display: block;
+}
+.pyg_goodsList .pyg_pbox > .pyg_sbox {
+  width: 49%;
+  margin-top: 10px;
+  float: left;
+  background-color: #fff;
+}
+.pyg_goodsList .pyg_pbox > .pyg_sbox > .pgy_good {
+  width: 100%;
+}
+.pyg_goodsList .pyg_pbox > .pyg_sbox > .pgy_good > img {
+  width: 100%;
+  display: block;
+}
+.pyg_goodsList .pyg_pbox > .pyg_sbox > .pgy_good > .pgy_desc {
+  color: #333;
+  font-size: 13px;
+  margin: 5px 0;
+}
+.pyg_goodsList .pyg_pbox > .pyg_sbox > .pgy_good > .pyg_price {
+  color: red;
+}
+.pyg_goodsList .pyg_pbox > .pyg_sbox > .pyg_btncate {
+  width: 80%;
+  display: block;
+  margin: 5px auto;
+}
+.pyg_goodsList .pyg_pbox > .pyg_sbox:nth-of-type(even) {
+  margin-left: 2%;
 }

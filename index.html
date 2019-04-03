@@ -34,19 +34,62 @@
                     <div>爆款手机</div>
                 </a>
                 <a href="">
-                    <img src="https://image1.suning.cn/uimg/cms/img/154708800857670247.png?format=_is_120w_120h.webp" alt="">
+                    <img src="https://image1.suning.cn/uimg/cms/img/154708800857670247.png?format=_is_120w_120h.webp"
+                        alt="">
                     <div>苏宁超市</div>
                 </a>
                 <a href="">
-                    <img src="https://image1.suning.cn/uimg/cms/img/155175138228120594.png?format=_is_120w_120h.webp" alt="">
+                    <img src="https://image1.suning.cn/uimg/cms/img/155175138228120594.png?format=_is_120w_120h.webp"
+                        alt="">
                     <div>生活超市</div>
                 </a>
                 <a href="">
-                    <img src="https://image2.suning.cn/uimg/cms/img/154708804944582613.png?format=_is_120w_120h.webp" alt="">
+                    <img src="https://image2.suning.cn/uimg/cms/img/154708804944582613.png?format=_is_120w_120h.webp"
+                        alt="">
                     <div>苏宁生鲜</div>
                 </a>
             </div>
-            <div class="pyg_goodsList"></div>
+            <div class="pyg_goodsList">
+                <div class="pyg_pbox clearfix" style="overflow:hidden">
+                    <img src="http://image4.suning.cn/uimg/cms/img/149559219946350066.png" alt="">
+                    <div class="pyg_sbox">
+                        <a href='javascript:;' class="pgy_good">
+                            <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070108067-000000000141909328_1_400x400.jpg"
+                                alt="">
+                            <div class="pgy_desc mui-ellipsis-2">康巴丝LED数码万年历电子挂钟表创意时尚夜光静音客厅风景日历钟</div>
+                            <div  class="pyg_price">￥ 33</div>
+                        </a>
+                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">蓝色</a>
+                    </div>
+                    <div class="pyg_sbox">
+                        <a href='javascript:;' class="pgy_good">
+                            <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070108067-000000000141909328_1_400x400.jpg"
+                                alt="">
+                            <div class="pgy_desc mui-ellipsis-2">康巴丝LED数码万年历电子挂钟表创意时尚夜光静音客厅风景日历钟</div>
+                            <div class="pyg_price">￥ 33</div>
+                        </a>
+                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">蓝色</a>
+                    </div>
+                    <div class="pyg_sbox">
+                        <a href='javascript:;' class="pgy_good">
+                            <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070108067-000000000141909328_1_400x400.jpg"
+                                alt="">
+                            <div class="pgy_desc mui-ellipsis-2">康巴丝LED数码万年历电子挂钟表创意时尚夜光静音客厅风景日历钟</div>
+                            <div  class="pyg_price">￥ 33</div>
+                        </a>
+                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">蓝色</a>
+                    </div>
+                    <div class="pyg_sbox">
+                        <a href='javascript:;' class="pgy_good">
+                            <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070108067-000000000141909328_1_400x400.jpg"
+                                alt="">
+                            <div class="pgy_desc mui-ellipsis-2">康巴丝LED数码万年历电子挂钟表创意时尚夜光静音客厅风景日历钟</div>
+                            <div  class="pyg_price">￥ 33</div>
+                        </a>
+                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">蓝色</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="pyg_footer">
             <nav class="mui-bar mui-bar-tab">
@@ -72,13 +115,13 @@
 
     <script type="text/template" id='pyg_bannerTemp'>
         <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[data.length-1].navigator_url}}"><img src="{{data[data.length-1].image_src}}" /></a></div>
-        {{each data as value index}}
+        {{each data value index}}
             <div class="mui-slider-item"><a href="{{value.navigator_url}}"><img src="{{value.image_src}}" /></a></div>
         {{/each}}
         <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[0].navigator_url}}"><img src="{{data[0].image_src}}" /></a></div>
     </script>
     <script type='text/template' id='indicatorTemp'>
-        {{each data as value index}}
+        {{each data value index}}
             <div class="mui-indicator {{index==0?'mui-active':''}}"></div>
         {{/each}}
     </script>
