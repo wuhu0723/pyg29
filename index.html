@@ -50,45 +50,7 @@
                 </a>
             </div>
             <div class="pyg_goodsList">
-                <div class="pyg_pbox clearfix" style="overflow:hidden">
-                    <img src="http://image4.suning.cn/uimg/cms/img/149559219946350066.png" alt="">
-                    <div class="pyg_sbox">
-                        <a href='javascript:;' class="pgy_good">
-                            <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070108067-000000000141909328_1_400x400.jpg"
-                                alt="">
-                            <div class="pgy_desc mui-ellipsis-2">康巴丝LED数码万年历电子挂钟表创意时尚夜光静音客厅风景日历钟</div>
-                            <div  class="pyg_price">￥ 33</div>
-                        </a>
-                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">蓝色</a>
-                    </div>
-                    <div class="pyg_sbox">
-                        <a href='javascript:;' class="pgy_good">
-                            <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070108067-000000000141909328_1_400x400.jpg"
-                                alt="">
-                            <div class="pgy_desc mui-ellipsis-2">康巴丝LED数码万年历电子挂钟表创意时尚夜光静音客厅风景日历钟</div>
-                            <div class="pyg_price">￥ 33</div>
-                        </a>
-                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">蓝色</a>
-                    </div>
-                    <div class="pyg_sbox">
-                        <a href='javascript:;' class="pgy_good">
-                            <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070108067-000000000141909328_1_400x400.jpg"
-                                alt="">
-                            <div class="pgy_desc mui-ellipsis-2">康巴丝LED数码万年历电子挂钟表创意时尚夜光静音客厅风景日历钟</div>
-                            <div  class="pyg_price">￥ 33</div>
-                        </a>
-                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">蓝色</a>
-                    </div>
-                    <div class="pyg_sbox">
-                        <a href='javascript:;' class="pgy_good">
-                            <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070108067-000000000141909328_1_400x400.jpg"
-                                alt="">
-                            <div class="pgy_desc mui-ellipsis-2">康巴丝LED数码万年历电子挂钟表创意时尚夜光静音客厅风景日历钟</div>
-                            <div  class="pyg_price">￥ 33</div>
-                        </a>
-                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">蓝色</a>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <div class="pyg_footer">
@@ -113,6 +75,24 @@
         </div>
     </div>
 
+    <script type="text/template" id='prolistTemp'>
+        {{each data value index}}
+            <div class="pyg_pbox clearfix" style="overflow:hidden">
+                <img src="{{value.group_img}}" alt="">
+                {{each value.goods v i}}
+                    <div class="pyg_sbox">
+                        <a href='javascript:;' class="pgy_good">
+                            <img src="{{v.goods_small_logo}}"
+                                alt="">
+                            <div class="pgy_desc mui-ellipsis-2">{{v.goods_name}}</div>
+                            <div  class="pyg_price">￥ {{v.goods_price}}</div>
+                        </a>
+                        <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">找相似</a>
+                    </div>
+                {{/each}}
+            </div>
+        {{/each}}
+    </script>
     <script type="text/template" id='pyg_bannerTemp'>
         <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[data.length-1].navigator_url}}"><img src="{{data[data.length-1].image_src}}" /></a></div>
         {{each data value index}}

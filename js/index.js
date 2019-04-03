@@ -46,6 +46,8 @@ function goodsList(){
         dataType:'json',
         success:function(result){
             console.log(result)
+            var html = template('prolistTemp',result)
+            $('.pyg_goodsList').html(html)
         }
     })
 }
