@@ -26,45 +26,8 @@
                 </ul>
             </div>
             <div class="right">
-                <div class="cate2">
-                    <div class="cate2_title">电视</div>
-                    <div class="cate2_content">
-                        <a href="goods_list.html?cid=5">
-                            <img src="http://157.122.54.189:9094/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
-                                alt="">
-                            <span>曲面电视</span>
-                        </a>
-                        <a href="goods_list.html?cid=5">
-                            <img src="http://157.122.54.189:9094/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
-                                alt="">
-                            <span>曲面电视</span>
-                        </a>
-                        <a href="goods_list.html?cid=5">
-                            <img src="http://157.122.54.189:9094/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
-                                alt="">
-                            <span>曲面电视</span>
-                        </a>
-                        <a href="goods_list.html?cid=5">
-                            <img src="http://157.122.54.189:9094/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
-                                alt="">
-                            <span>曲面电视</span>
-                        </a>
-                        <a href="goods_list.html?cid=5">
-                            <img src="http://157.122.54.189:9094/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
-                                alt="">
-                            <span>曲面电视</span>
-                        </a>
-                        <a href="goods_list.html?cid=5">
-                            <img src="http://157.122.54.189:9094/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
-                                alt="">
-                            <span>曲面电视</span>
-                        </a>
-                        <a href="goods_list.html?cid=5">
-                            <img src="http://157.122.54.189:9094/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
-                                alt="">
-                            <span>曲面电视</span>
-                        </a>
-                    </div>
+                <div class="rightList">
+
                 </div>
             </div>
         </div>
@@ -95,6 +58,23 @@
             <li class="{{index==0?'active':''}}">
                 <a href="#" data-id='{{value.cat_id}}'>{{value.cat_name}}</a>
             </li>
+        {{/each}}
+    </script>
+
+    <script type='text/template' id='rightListTemp'>
+        {{each children value index}}
+            <div class="cate2">
+                <div class="cate2_title">{{value.cat_name}}</div>
+                <div class="cate2_content">
+                    {{each value.children v i}}
+                        <a href="goods_list.html?cid={{v.cat_id}}">
+                            <img src="http://157.122.54.189:9094{{v.cat_icon}}"
+                                alt="">
+                            <span>{{v.cat_name}}</span>
+                        </a>
+                    {{/each}}
+                </div>
+            </div>
         {{/each}}
     </script>
     <script src="../lib/mui/js/mui.min.js"></script>
