@@ -13,7 +13,7 @@ $(function(){
     $.ajaxSettings.beforeSend = function(xhr,obj){
         $('body').addClass('loadding')
         // 在这边我们想拼接url
-        console.log(obj)
+        // console.log(obj)
         // obj.url:就是当前发送请求的url
         obj.url = baseURL + obj.url
     }
