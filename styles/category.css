@@ -142,3 +142,38 @@ ul {
   z-index: 101;
   animation: fa-spin 1s infinite linear;
 }
+.pyg_content {
+  display: flex;
+}
+.pyg_content > .left {
+  width: 100px;
+  overflow: hidden;
+}
+.pyg_content > .left > ul {
+  width: 100%;
+}
+.pyg_content > .left > ul > li {
+  height: 50px;
+  width: 100%;
+}
+.pyg_content > .left > ul > li > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  background-color: #eee;
+  border-bottom: 1px solid #888;
+  border-right: 1px solid #888;
+  font-size: 14px;
+  color: #333;
+}
+.pyg_content > .left > ul > li.active > a {
+  color: red;
+  background-color: #fff;
+  border-right: none;
+}
+.pyg_content > .right {
+  flex: 1;
+  background-color: #00f;
+}
