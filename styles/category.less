@@ -36,6 +36,31 @@
     }
     > .right{
         flex: 1;
-        background-color: #00f;
+        padding: 10px;
+        background-color: #fff;
+        > .cate2{
+            width: 100%;
+            >.cate2_title{
+                line-height: 30px;
+                text-indent:5px;
+            }
+            >.cate2_content{
+                display: flex;
+                flex-wrap: wrap;
+                > a {
+                    width: 33.33%;
+                    text-align: center;
+                    margin: 5px 0;
+                    color: #666;
+                    > img {
+                        width: 70%;
+                    }
+                    > span {
+                        display: block;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
     }
 }
