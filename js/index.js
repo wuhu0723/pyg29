@@ -2,8 +2,16 @@ $(function(){
     banner()
     // nav()
     goodsList()
+
+
+    mui('body').on('tap', 'a', function (e) {
+        e.preventDefault()
+        window.top.location.href = this.href;
+    });
+    
 })
 
+// 生成首页动态轮播图
 function banner(){
      // 动态生成轮播图结构
      $.ajax({
@@ -39,6 +47,7 @@ function nav(){
     })
 }
 
+// 生成首页商品列表
 function goodsList(){
     $.ajax({
         type:'get',
