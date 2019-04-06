@@ -30,7 +30,7 @@ $(function () {
     }
 
 
-
+    // 下拉刷新和上拉加载
     mui.init({
         swipeBack:false,
         pullRefresh: {
@@ -49,6 +49,7 @@ $(function () {
                         var html = template('goodlistTemp',result.data)
                         $('.goodslist').html(html)
                         mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+                        mui('#refreshContainer').pullRefresh().refresh(true)
                     })
                 }
             },
@@ -59,7 +60,16 @@ $(function () {
                 contentrefresh: "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
                 contentnomore: '没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
                 callback: function(){
-
+                    data.pagenum ++ 
+                    renderMainData(function(result){
+                        if(result.data.goods.length > 0){
+                            var html = template('goodlistTemp',result.data)
+                            $('.goodslist').append(html)
+                            mui('#refreshContainer').pullRefresh().endPullupToRefresh();
+                        }else{
+                            mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+                        }
+                    })
                 }//必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
             }
         }
