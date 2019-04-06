@@ -12,10 +12,10 @@ $(function () {
         pagesize:10
     }
 
-    renderMainData()
+    // renderMainData()
     // 获取数据
     // 封装函数原因是：后期下拉和上拉的时候需要重新加载数据
-    function renderMainData(){
+    function renderMainData(callback){
         console.log(data)
         $.ajax({
             type:'get',
@@ -24,8 +24,7 @@ $(function () {
             dataType:'json',
             success:function(result){
                 console.log(result)
-                var html = template('goodlistTemp',result.data)
-                $('.goodslist').html(html)
+                callback(result)
             }
         })
     }
@@ -39,12 +38,18 @@ $(function () {
             // down:说明这是下拉的初始化
             down: {
                 height: 50,//可选,默认50.触发下拉刷新拖动距离,
-                auto: false,//可选,默认false.首次加载自动下拉刷新一次
+                auto: true,//可选,默认false.首次加载自动下拉刷新一次
                 contentdown: "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
                 contentover: "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
                 contentrefresh: "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+                // 下面这个回调函数在下拉松开手指之后会触发
                 callback: function () { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
-
+                    data.pagenum = 1
+                    renderMainData(function(result){
+                        var html = template('goodlistTemp',result.data)
+                        $('.goodslist').html(html)
+                        mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+                    })
                 }
             },
             // 上拉加载更多数据
