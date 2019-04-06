@@ -7,6 +7,7 @@ $(function(){
     var cateData
 
     // 创建渲染函数，实现数据的动态渲染
+    // 判断缓存数据是否存在且有效，如果有效则直接使用缓存，如果无效则发送请求
     function render(){
         // 获取本地数据，判断是否超时，如果没有超时就直接使用本地数据进行数据结构的动态渲染
         cateData = JSON.parse(localStorage.getItem('pyg_cateData'))
@@ -65,6 +66,7 @@ $(function(){
 
     // 动态生成右侧二级分类数据
     function rightCateList(index){
+        // {'list':result.data,time:Date.now()}   》》 result.data【0】
         var html = template('rightListTemp',cateData.list[index])
         // 生成了图片的动态结构
         $('.rightList').html(html)

@@ -8,28 +8,19 @@
     <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="../lib/mui/css/muie.css">
     <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
-    <link rel="stylesheet" href="../styles/category.css">
+    <link rel="stylesheet" href="../styles/goodsList.css">
     <title>29-品优购</title>
 </head>
 
 <body>
     <div class="layout">
-        <div class="pyg_header">
-            <div class="mui-input-row mui-search">
-                <input type="search" class="mui-input-clear" placeholder="">
-            </div>
-        </div>
+        <header id="header" class="mui-bar mui-bar-nav pyg_header">
+            <h1 class="mui-title">搜索</h1>
+            <a class="mui-icon mui-icon-search mui-pull-right"></a>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        </header>
         <div class="pyg_content">
-            <div class="left">
-                <ul>
-                    
-                </ul>
-            </div>
-            <div class="right">
-                <div class="rightList">
 
-                </div>
-            </div>
         </div>
         <div class="pyg_footer">
             <nav class="mui-bar mui-bar-tab">
@@ -52,37 +43,11 @@
             </nav>
         </div>
     </div>
-
-    <script type="text/template" id='leftnavTemp'>
-        {{each list value index}}
-            <li class="{{index==0?'active':''}}">
-                <a href="#" data-id='{{value.cat_id}}'>{{value.cat_name}}</a>
-            </li>
-        {{/each}}
-    </script>
-
-    <script type='text/template' id='rightListTemp'>
-        {{each children value index}}
-            <div class="cate2">
-                <div class="cate2_title">{{value.cat_name}}</div>
-                <div class="cate2_content">
-                    {{each value.children v i}}
-                        <a href="goodsList.html?cid={{v.cat_id}}">
-                            <img src="http://157.122.54.189:9094{{v.cat_icon}}"
-                                alt="">
-                            <span>{{v.cat_name}}</span>
-                        </a>
-                    {{/each}}
-                </div>
-            </div>
-        {{/each}}
-    </script>
     <script src="../lib/mui/js/mui.min.js"></script>
     <script src="../lib/zepto/zepto.js"></script>
     <script src="../lib/arttemplate/template-web.js"></script>
     <script src="../lib/iscroll/iscroll.js"></script>
     <script src="../js/common.js"></script>
-    <script src="../js/category.js"></script>
 </body>
 
 </html>
