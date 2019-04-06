@@ -142,11 +142,14 @@ ul {
   z-index: 101;
   animation: fa-spin 1s infinite linear;
 }
-.pyg_header {
+#header {
   background-color: #0094FF;
   padding: 0;
 }
-.pyg_header .mui-icon {
+#header .mui-icon {
   color: #fff;
   font-weight: bold;
+}
+.pyg_content {
+  position: relative;
 }
