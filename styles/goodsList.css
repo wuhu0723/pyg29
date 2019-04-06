@@ -153,6 +153,33 @@ ul {
 .pyg_content {
   position: relative;
 }
+.pyg_content .search_bar {
+  height: 40px;
+}
+.pyg_content .search_bar > .searchBox {
+  height: 40px;
+  padding: 5px;
+  position: relative;
+}
+.pyg_content .search_bar > .searchBox > input {
+  height: 30px;
+  width: 100%;
+  border: none;
+  border: 1px solid #ccc;
+  margin-bottom: 0;
+  padding: 0;
+}
+.pyg_content .search_bar > .searchBox > .query_btn {
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  background-color: skyblue;
+  line-height: 30px;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  padding: 0;
+}
 .pyg_content .goodslist > li {
   width: 100%;
   margin-bottom: 5px;

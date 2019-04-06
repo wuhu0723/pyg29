@@ -14,14 +14,22 @@
 
 <body>
     <div class="layout">
-
         <div class="pyg_content">
+            <!-- 侧滑导航菜单 -->
             <div class="mui-off-canvas-wrap mui-draggable">
                 <!-- 菜单容器 -->
                 <aside class="mui-off-canvas-right">
                     <div class="mui-scroll-wrapper">
                         <div class="mui-scroll">
-                            菜单具体展示内容
+                            <div class="search_bar">
+                                <div class="searchBox">
+                                    <input type="text" class="query_txt">
+                                    <button class="query_btn">搜索</button>
+                                </div>
+                            </div>
+                            <div class="searchList" style="overflow:hidden">
+                               
+                            </div>
                         </div>
                     </div>
                 </aside>
@@ -35,7 +43,7 @@
                     <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
                         <div class="mui-scroll">
                             <ul class="goodslist">
-                               
+
                             </ul>
                         </div>
                     </div>
@@ -63,6 +71,11 @@
             </nav>
         </div>
     </div>
+    <script type="text/template" id='searchListTemp'>
+        {{each goods value index}}
+            <a href="./goodsDetail.html?pid={{value.goods_id}}" class="mui-ellipsis">{{value.goods_name}}</a>
+        {{/each}}
+    </script>
     <script type="text/template" id='goodlistTemp'>
         {{each goods value index}}
             <li>

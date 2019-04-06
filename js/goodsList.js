@@ -6,7 +6,6 @@ $(function () {
 
     // 参数
     var data = {
-        query:'',
         cid:getParameter(location.search).cid,
         pagenum:1,
         pagesize:10
@@ -15,15 +14,16 @@ $(function () {
     // renderMainData()
     // 获取数据
     // 封装函数原因是：后期下拉和上拉的时候需要重新加载数据
-    function renderMainData(callback){
-        console.log(data)
+    function renderMainData(callback,obj){
+        // console.log(data)
         $.ajax({
             type:'get',
             url:'goods/search',
-            data:data,
+            // $.extend(obj1,obj2):将obj2的成员添加到obj1中，如果成员名称不一样，就累加，如果成员名称一致就覆盖
+            data:$.extend(data,obj),
             dataType:'json',
             success:function(result){
-                console.log(result)
+                // console.log(result)
                 callback(result)
             }
         })
@@ -49,6 +49,7 @@ $(function () {
                         var html = template('goodlistTemp',result.data)
                         $('.goodslist').html(html)
                         mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+                        // 为了防止切换分类的时候，无法再上拉，所以在每次刷新的时候将上拉加载重新启用
                         mui('#refreshContainer').pullRefresh().refresh(true)
                     })
                 }
@@ -89,4 +90,15 @@ $(function () {
         }
         return obj
     }
+
+    $('.query_btn').on('tap',function(){
+        // 展开运算符 + 对象解构
+        var obj = {}
+        obj.query = $('.query_txt').val()
+        renderMainData(function(result){
+            console.log(result)
+            var html = template('searchListTemp',result.data)
+            $('.searchList').html(html)
+        },obj)
+    })
 })
