@@ -175,6 +175,7 @@ ul {
   margin: 0 auto;
 }
 .pyg_content .goodslist > li > a > div:nth-of-type(2) {
+  float: right;
   padding: 20px 0;
 }
 .pyg_content .goodslist > li > a > div:nth-of-type(2) > span {

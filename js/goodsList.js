@@ -24,6 +24,8 @@ $(function () {
             dataType:'json',
             success:function(result){
                 console.log(result)
+                var html = template('goodlistTemp',result.data)
+                $('.goodslist').html(html)
             }
         })
     }
