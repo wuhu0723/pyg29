@@ -153,3 +153,32 @@ ul {
 .pyg_content {
   position: relative;
 }
+.pyg_content .goodslist > li {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.pyg_content .goodslist > li > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 5px 0;
+}
+.pyg_content .goodslist > li > a > div {
+  width: 50%;
+  float: left;
+}
+.pyg_content .goodslist > li > a > div > img {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+.pyg_content .goodslist > li > a > div:nth-of-type(2) {
+  padding: 20px 0;
+}
+.pyg_content .goodslist > li > a > div:nth-of-type(2) > span {
+  margin-bottom: 40px;
+  width: 100%;
+  overflow: hidden;
+}

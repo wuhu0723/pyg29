@@ -4,6 +4,31 @@ $(function () {
         mui('.mui-off-canvas-wrap').offCanvas('show');
     })
 
+    // 参数
+    var data = {
+        query:'',
+        cid:getParameter(location.search).cid,
+        pagenum:1,
+        pagesize:10
+    }
+
+    renderMainData()
+    // 获取数据
+    // 封装函数原因是：后期下拉和上拉的时候需要重新加载数据
+    function renderMainData(){
+        console.log(data)
+        $.ajax({
+            type:'get',
+            url:'goods/search',
+            data:data,
+            dataType:'json',
+            success:function(result){
+                console.log(result)
+            }
+        })
+    }
+
+
 
     mui.init({
         swipeBack:false,
@@ -20,6 +45,7 @@ $(function () {
 
                 }
             },
+            // 上拉加载更多数据
             up: {
                 height: 50,//可选.默认50.触发上拉加载拖动距离
                 auto: false,//可选,默认false.自动上拉加载一次
@@ -31,4 +57,19 @@ $(function () {
             }
         }
     });
+
+    // ?cid=5&name=jack
+    function getParameter(url){
+        var obj = {}
+        // location.search:url中?及?后面的内容
+        url = url.substring(1) //cid=5&name=jack
+        // 先按&拆分
+        var arr = url.split('&') //['cid=5','name=jack']
+        // 遍历进行第二次拆分
+        for(var i=0;i<arr.length;i++){
+            var temp = arr[i].split('=') //['cid',5]
+            obj[temp[0]] = temp[1] // obj['cid'] = 5
+        }
+        return obj
+    }
 })

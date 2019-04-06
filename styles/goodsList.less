@@ -11,4 +11,35 @@
 }
 .pyg_content{
     position: relative;
+    .goodslist{
+        > li {
+            width: 100%;
+            margin-bottom: 5px;
+            > a {
+                width: 100%;
+                height: 100%;
+                display: block;
+                overflow: hidden;
+                background-color: #fff;
+                padding: 5px 0;
+                > div {
+                    width: 50%;
+                    float: left;
+                    > img {
+                        width: 70%;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+                > div:nth-of-type(2) {
+                    padding: 20px 0;
+                    > span {
+                        margin-bottom: 40px;
+                        width: 100%;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
 }
