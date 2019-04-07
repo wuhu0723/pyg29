@@ -45,8 +45,10 @@ $(function(){
         // 1.判断是否有token，如果没有，则重定向到登陆页面
         // 约定使用sessionStorage存储
         var mytoken = sessionStorage.getItem('pyg_token')
+
         if(!mytoken){
-            location.href='./login.html'
+            // sessionStorage.setItem('redirectUrl',location.href)
+            location.href = './login.html?redirectUrl='+escape(location.href)
         }
         // 2.如果有token,那么就发送请求
         else{
@@ -59,11 +61,15 @@ $(function(){
                     console.log(result)
                     // 3.接收返回结果，如果是token过期，则重新登陆--重定向到登陆页
                     if(result.meta.status === 401){
-                        sessionStorage.setItem('redirectUrl',location.href)
-                        location.href='./login.html'
+                        // sessionStorage.setItem('redirectUrl',location.href)
+                        // location.href='./login.html'
+
+                        // 通过url编码来实现href的传递
+                        location.href = './login.html?redirectUrl='+escape(location.href)
                     }
                     // 4.如果有效，那么就弹出提示：添加成功，是否查看购物车
                     else{
+                        // 提示
                         console.log('ok')
                     }
                 }

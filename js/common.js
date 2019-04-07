@@ -16,6 +16,12 @@ $(function () {
         // console.log(obj)
         // obj.url:就是当前发送请求的url
         obj.url = baseURL + obj.url
+
+        // 在访问私有路径的时候，手动的将token值传递给服务器
+        // 值如何传递：通过请求头的方式将token值传递给服务器
+        if(obj.url.indexOf('/my/') != -1){
+            xhr.setRequestHeader('Authorization',sessionStorage.getItem('pyg_token'))
+        }
     }
 
     // complete：请求完成时触发

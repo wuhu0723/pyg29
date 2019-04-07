@@ -30,10 +30,13 @@ $(function(){
                     // 1.将当前token值存储到本地存储
                     sessionStorage.setItem('pyg_token',result.data.token)
                     // 2.进行页面的跳转
-                    // var re = $.getParameter(location.search).redirectUrl
-                    // console.log($.getParameter(location.search))
-                    var re = sessionStorage.getItem('redirectUrl')
-                    location.href = re
+                    // var re = sessionStorage.getItem('redirectUrl')
+                    var re = $.getParameter(location.search).redirectUrl
+                    if(re){
+                        location.href = unescape(re)
+                    }else{
+                        location.href = '/index.html'
+                    }
                 }else{
                     mui.toast(result.meta.msg)
                 }
