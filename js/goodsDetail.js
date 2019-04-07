@@ -14,6 +14,11 @@ $(function(){
         dataType:'json',
         success:function(result){
             console.log(result)
+            var html = template('gdTemp',result.data)
+            $('.mui-scroll').html(html)
+            mui('.mui-slider').slider({
+                interval:2000
+            });
         }
     })
 })
