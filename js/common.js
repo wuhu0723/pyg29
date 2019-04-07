@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
     // 默认情况 下，mui不响应click单击事件，这是它的默认行为
     // 我们解决方式就是重新为所有A绑定tap
     mui('body').on('tap', 'a', function (e) {
@@ -10,7 +10,7 @@ $(function(){
     const baseURL = 'http://157.122.54.189:9094/api/public/v1/'
     // 添加zepto拦截器：它的作用是可以让每个ajax请求都经过这个函数进行处理
     // beforeSend：每次发送ajax请求都必须经过的处理函数
-    $.ajaxSettings.beforeSend = function(xhr,obj){
+    $.ajaxSettings.beforeSend = function (xhr, obj) {
         $('body').addClass('loadding')
         // 在这边我们想拼接url
         // console.log(obj)
@@ -19,9 +19,26 @@ $(function(){
     }
 
     // complete：请求完成时触发
-    $.ajaxSettings.complete = function(){
+    $.ajaxSettings.complete = function () {
         // 在这边我们想拼接url
         // console.log(456)
         $('body').removeClass('loadding')
     }
+
+    // 动态扩展zepto中的成员
+    $.extend($, {
+        getParameter: function (url) {
+            var obj = {}
+            // location.search:url中?及?后面的内容
+            url = url.substring(1) //cid=5&name=jack
+            // 先按&拆分
+            var arr = url.split('&') //['cid=5','name=jack']
+            // 遍历进行第二次拆分
+            for (var i = 0; i < arr.length; i++) {
+                var temp = arr[i].split('=') //['cid',5]
+                obj[temp[0]] = temp[1] // obj['cid'] = 5
+            }
+            return obj
+        }
+    });
 })
