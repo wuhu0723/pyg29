@@ -20,6 +20,8 @@ $(function () {
         // 在访问私有路径的时候，手动的将token值传递给服务器
         // 值如何传递：通过请求头的方式将token值传递给服务器
         if(obj.url.indexOf('/my/') != -1){
+            // xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded')
+
             xhr.setRequestHeader('Authorization',sessionStorage.getItem('pyg_token'))
         }
     }
@@ -44,7 +46,7 @@ $(function () {
                 var temp = arr[i].split('=') //['cid',5]
                 obj[temp[0]] = temp[1] // obj['cid'] = 5
             }
-            return obj
+            return obj // {cid:5,name:'jack'}
         }
     });
 })
