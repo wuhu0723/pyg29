@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="../lib/mui/css/muie.css">
     <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../styles/cart.css">
     <title>29-品优购</title>
 </head>
 
@@ -21,47 +22,119 @@
         <div class="pyg_content">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                    <div class="pyg_address">
-                        <div>配送地址</div>
-                        <div>
-                            <div class="left">
-                                <span></span>
-                            </div>
-                            <div class="right">
-                                <div>默认地址</div>
-                                <span>广州传智播客</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pyg_totalPrice">
-                        <div>总价</div>
-                        <div>
-                            <div class="left">总价：￥12345</div>
-                            <div class="right">
-                                <button type="button" class="mui-btn mui-btn-primary">生成订单</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pyg_order">
-                        <div>订单</div>
-                        <div class="order_list">
+                    <div class="order_content">
+                        <div class="pyg_address">
+                            <div>配送地址</div>
                             <div>
-                                <div class="mui-input-row mui-checkbox mui-left">
-                                    <label>checked：true</label>
-                                    <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                                <div class="left">
+                                    <span class="mui-icon mui-icon-location"></span>
+                                </div>
+                                <div class="right">
+                                    <div>默认地址</div>
+                                    <span>广州传智播客</span>
                                 </div>
                             </div>
-                            <div class="pyg_oimg">
-                                <img src="../static/images/goods_thnmp.png" alt="">
-                            </div>
+                        </div>
+                        <div class="pyg_totalPrice">
+                            <div>总价</div>
                             <div>
-                                <div>古达 酒精炉小火锅不锈钢加厚干锅锅户外便携小火锅炉 中号16cm 带赠品</div>
-                                <div class="mui-numbox" data-numbox-min="1" data-numbox-max="9">
-                                    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
-                                    <input id="test" class="mui-input-numbox" type="number" value="1">
-                                    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                <div class="left">总价：<span class="price">￥12345</span></div>
+                                <a class="right" href='javascript:;'>生成订单</a>
+                            </div>
+                        </div>
+                        <div class="pyg_order">
+                            <div>订单</div>
+                            <div class="order_list">
+                                <div class="order-singer">
+                                    <div class="mui-input-row mui-checkbox mui-left">
+                                        <label></label>
+                                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                                    </div>
+                                    <div class="pyg_oimg">
+                                        <img src="../static/images/goods_thnmp.png" alt="">
+                                    </div>
+                                    <div>
+                                        <div class="mui-ellipsis-2">古达 酒精炉小火锅不锈钢加厚干锅锅户外便携小火锅炉 中号16cm 带赠品</div>
+                                        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="9">
+                                            <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                                            <input id="test" class="mui-input-numbox" type="number" value="1">
+                                            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                        </div>
+                                        <div>￥ 88</div>
+                                    </div>
                                 </div>
-                                <div>￥ 88</div>
+                                <div class="order-singer">
+                                    <div class="mui-input-row mui-checkbox mui-left">
+                                        <label></label>
+                                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                                    </div>
+                                    <div class="pyg_oimg">
+                                        <img src="../static/images/goods_thnmp.png" alt="">
+                                    </div>
+                                    <div>
+                                        <div class="mui-ellipsis-2">古达 酒精炉小火锅不锈钢加厚干锅锅户外便携小火锅炉 中号16cm 带赠品</div>
+                                        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="9">
+                                            <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                                            <input id="test" class="mui-input-numbox" type="number" value="1">
+                                            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                        </div>
+                                        <div>￥ 88</div>
+                                    </div>
+                                </div>
+                                <div class="order-singer">
+                                    <div class="mui-input-row mui-checkbox mui-left">
+                                        <label></label>
+                                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                                    </div>
+                                    <div class="pyg_oimg">
+                                        <img src="../static/images/goods_thnmp.png" alt="">
+                                    </div>
+                                    <div>
+                                        <div class="mui-ellipsis-2">古达 酒精炉小火锅不锈钢加厚干锅锅户外便携小火锅炉 中号16cm 带赠品</div>
+                                        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="9">
+                                            <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                                            <input id="test" class="mui-input-numbox" type="number" value="1">
+                                            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                        </div>
+                                        <div>￥ 88</div>
+                                    </div>
+                                </div>
+                                <div class="order-singer">
+                                    <div class="mui-input-row mui-checkbox mui-left">
+                                        <label></label>
+                                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                                    </div>
+                                    <div class="pyg_oimg">
+                                        <img src="../static/images/goods_thnmp.png" alt="">
+                                    </div>
+                                    <div>
+                                        <div class="mui-ellipsis-2">古达 酒精炉小火锅不锈钢加厚干锅锅户外便携小火锅炉 中号16cm 带赠品</div>
+                                        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="9">
+                                            <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                                            <input id="test" class="mui-input-numbox" type="number" value="1">
+                                            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                        </div>
+                                        <div>￥ 88</div>
+                                    </div>
+                                </div>
+                                <div class="order-singer">
+                                    <div class="mui-input-row mui-checkbox mui-left">
+                                        <label></label>
+                                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                                    </div>
+                                    <div class="pyg_oimg">
+                                        <img src="../static/images/goods_thnmp.png" alt="">
+                                    </div>
+                                    <div>
+                                        <div class="mui-ellipsis-2">古达 酒精炉小火锅不锈钢加厚干锅锅户外便携小火锅炉 中号16cm 带赠品</div>
+                                        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="9">
+                                            <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                                            <input id="test" class="mui-input-numbox" type="number" value="1">
+                                            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                        </div>
+                                        <div>￥ 88</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -74,11 +147,11 @@
                     <span class="mui-icon mui-icon-weixin"></span>
                     <span class="mui-tab-label">客服</span>
                 </a>
-                <a class="mui-tab-item mui-active" href="#">
+                <a class="mui-tab-item" href="#">
                     <span class="mui-icon mui-icon-phone"></span>
                     <span class="mui-tab-label">联系</span>
                 </a>
-                <a class="mui-tab-item" href="#tabbar-with-contact">
+                <a class="mui-tab-item mui-active" href="#tabbar-with-contact">
                     <span class="mui-icon-extra mui-icon-extra-cart"></span>
                     <div class="mui-tab-label" style='font-size: 12px'>购物车</div>
                 </a>
@@ -95,7 +168,7 @@
     <script src="../lib/arttemplate/template-web.js"></script>
     <script src="../lib/iscroll/iscroll.js"></script>
     <script src="../js/common.js"></script>
-    <script src="../js/goodsDetail.js"></script>
+    <script src="../js/cart.js"></script>
 </body>
 
 </html>

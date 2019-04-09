@@ -1,0 +1,243 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+ol,
+ul {
+  list-style: none;
+}
+.clearfix::before {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
+.layout {
+  width: 100vw;
+  height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.pyg_header {
+  height: 45px;
+  background-color: #eee;
+  padding: 4px;
+}
+.pyg_content {
+  flex: 1;
+  overflow: scroll;
+}
+.pyg_footer {
+  height: 45px;
+}
+.loadding::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: .5;
+  content: "";
+  z-index: 100;
+}
+.loadding::after {
+  font: normal normal normal 14px/1 FontAwesome;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-left: -50px;
+  font-size: 100px;
+  color: #0094ff;
+  content: "\f013";
+  z-index: 101;
+  animation: fa-spin 1s infinite linear;
+}
+.line1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal!important;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+}
+.pyg_content {
+  overflow: hidden;
+  padding-top: 45px;
+  position: relative;
+}
+.pyg_content .mui-scroll-wrapper {
+  top: 45px;
+  bottom: 10px;
+}
+.pyg_content .mui-scroll-wrapper .order_content {
+  padding: 10px;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_address {
+  margin-top: 10px;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_address > div:nth-of-type(1) {
+  color: #888;
+  font-size: 13px;
+  margin: 4px 0;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_address > div:nth-of-type(2) {
+  background-color: #fff;
+  height: 40px;
+  display: flex;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_address > div:nth-of-type(2) > .left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_address > div:nth-of-type(2) .right {
+  flex: 5;
+  font-size: 13px;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_address > div:nth-of-type(2) .right > div {
+  font-size: 15px;
+  color: #333;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_totalPrice {
+  margin-top: 20px;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_totalPrice > div:nth-of-type(1) {
+  color: #888;
+  font-size: 13px;
+  margin: 4px 0;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_totalPrice > div:nth-of-type(2) {
+  padding: 0 10px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_totalPrice > div:nth-of-type(2) .price {
+  color: Red;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_order {
+  margin-top: 20px;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_order > div:nth-of-type(1) {
+  color: #888;
+  font-size: 13px;
+  margin: 4px 0;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_order > .order_list .order-singer {
+  display: flex;
+  background-color: #fff;
+  margin-top: 3px;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_order > .order_list .order-singer > div:nth-of-type(1) {
+  flex: 2;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_order > .order_list .order-singer > div:nth-of-type(1) input {
+  margin-top: 25px;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_order > .order_list .order-singer > div:nth-of-type(2) {
+  flex: 3;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_order > .order_list .order-singer > div:nth-of-type(2) > img {
+  width: 90%;
+  display: block;
+}
+.pyg_content .mui-scroll-wrapper .order_content .pyg_order > .order_list .order-singer > div:nth-of-type(3) {
+  flex: 6;
+  font-size: 13px;
+}

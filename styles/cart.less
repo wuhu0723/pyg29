@@ -1,0 +1,99 @@
+@import './reset.less';
+@import './common.less';
+
+
+.pyg_content{
+    overflow: hidden;
+    padding-top: 45px;
+    position: relative;
+    .mui-scroll-wrapper{
+        top:45px;
+        bottom: 10px;
+        .order_content{
+            padding: 10px;
+            .pyg_address{
+                margin-top: 10px;
+                > div:nth-of-type(1) {
+                    color: #888;
+                    font-size: 13px;
+                    margin: 4px 0;
+                }
+                > div:nth-of-type(2){
+                    background-color: #fff;
+                    height: 40px;
+                    display: flex;
+                    > .left{
+                        flex: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .right {
+                        flex: 5;
+                        font-size: 13px;
+                        color: #888;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        > div{
+                            font-size: 15px;
+                            color:#333;
+                        }
+                    }
+                }
+            }
+            .pyg_totalPrice{
+                margin-top: 20px;
+                > div:nth-of-type(1){
+                    color: #888;
+                    font-size: 13px;
+                    margin: 4px 0;
+                }
+                > div:nth-of-type(2){
+                    padding: 0 10px;
+                    height: 40px;
+                    line-height: 40px;
+                    background-color: #fff;
+                    display: flex;
+                    justify-content: space-between;
+                    .price{
+                        color:Red;
+                    }
+                }
+            }
+            .pyg_order{
+               margin-top: 20px; 
+               > div:nth-of-type(1){
+                    color: #888;
+                    font-size: 13px;
+                    margin: 4px 0;
+                }
+                > .order_list{
+                    .order-singer{
+                        display: flex;
+                        background-color: #fff;
+                        margin-top: 3px;
+                        > div:nth-of-type(1){
+                            flex: 2;
+                            input {
+                                margin-top: 25px;
+                            }
+                        }
+                        > div:nth-of-type(2){
+                            flex: 3;
+                            > img {
+                                width: 90%;
+                                display: block;
+                            }
+                        }
+                        > div:nth-of-type(3){
+                            flex: 6;
+                            font-size: 13px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
