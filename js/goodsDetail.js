@@ -57,7 +57,7 @@ $(function () {
             $.ajax({
                 type: 'post',
                 url: 'my/cart/add',
-                data: JSON.stringify(info),
+                data: {info:JSON.stringify(info)},
                 dataType: 'json',
                 success: function (result) {
                     console.log(result)
