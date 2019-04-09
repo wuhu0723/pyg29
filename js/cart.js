@@ -35,8 +35,34 @@ $(function(){
         }else{
             $(this).text('编辑') 
             // 将用户编辑更新到数据库 -- 同步购物车
+            syncCart($('.order-singer'))
         }
     })
+
+    // 同步购物车
+    // allList：就是你需要同步的数据
+    function syncCart(allList){
+        // 收集数据：一定要符合后台的需求
+        var list_obj = {}
+        for(var i=0;i< allList.length;i++){
+            var data  = $(allList[i]).data('order')
+            console.log(data)
+            // 注意重置用户修改的数量
+            data.amount = $(allList[i]).find('#test').val()
+            // 后台所需要的数据格式是键值对
+            list_obj[data.goods_id] = data
+        }
+        console.log(list_obj)
+        // 发起ajax请求
+        $.ajax({
+            type:'post',
+            url:'my/cart/sync',
+            data:{'infos':JSON.stringify(list_obj)},
+            success:function(result){
+                console.log(result)
+            }
+        })
+    }
 
 
     // 计算总价
