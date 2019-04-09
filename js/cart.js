@@ -49,12 +49,17 @@ $(function(){
             // 计算价格进行累加：数量 * 价格
             // 获取价格
             var price = $(value).data('order').goods_price
-            // 获取数量
+            // 获取数量：用户可以随时修改数量，所以不能从自定义属性中进行数据的获取
             var num = $(value).find('#test').val()
             // 计算总价
             total = total + (price * num)
-            // 赋值到元素
-            $('.price').text('￥ ' + total)
         })
+        // 赋值到元素
+        $('.price').text('￥ ' + total)
     }
+
+    // 单击修改数量重新计算价格
+    $('.order_list').on('tap','.pyg_userNum .mui-btn',function(){
+        calcTotalPrice()
+    })
 })
