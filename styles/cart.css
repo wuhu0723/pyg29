@@ -241,3 +241,7 @@ ul {
   flex: 6;
   font-size: 13px;
 }
+.eleToggle .pyg_orderDel,
+.eleToggle .mui-checkbox {
+  display: none;
+}

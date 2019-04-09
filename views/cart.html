@@ -12,12 +12,12 @@
     <title>29-品优购</title>
 </head>
 
-<body>
+<body class="eleToggle">
     <div class="layout">
         <header id="header" class="mui-bar mui-bar-nav">
             <h1 class="mui-title">购物车</h1>
-            <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-left">删除</button>
-            <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-right">完成</button>
+            <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-left pyg_orderDel">删除</button>
+            <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-right pyg-orderEdit">编辑</button>
         </header>
         <div class="pyg_content">
             <div class="mui-scroll-wrapper">
@@ -74,7 +74,7 @@
     </div>
     <script type="text/template" id='orderTemp'>
         {{each list value index}}
-            <div class="order-singer">
+            <div class="order-singer" data-order='{{value}}'>
                 <div class="mui-input-row mui-checkbox mui-left">
                     <label></label>
                     <input name="checkbox" value="Item 2" type="checkbox" checked="">
@@ -84,7 +84,7 @@
                 </div>
                 <div>
                     <div class="mui-ellipsis-2">{{value.goods_name}}</div>
-                    <div class="mui-numbox" data-numbox-min="1" data-numbox-max="{{value.goods_number}}">
+                    <div class="mui-numbox pyg_userNum" data-numbox-min="1" data-numbox-max="{{value.goods_number}}">
                         <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
                         <input id="test" class="mui-input-numbox" type="number" value="{{value.amount}}">
                         <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
