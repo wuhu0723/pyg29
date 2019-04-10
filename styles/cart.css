@@ -240,6 +240,9 @@ ul {
 .pyg_content .mui-scroll-wrapper .order_content .pyg_order > .order_list .order-singer > div:nth-of-type(3) {
   flex: 6;
   font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .eleToggle .pyg_orderDel,
 .eleToggle .mui-checkbox {
