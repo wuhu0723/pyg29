@@ -1,0 +1,11 @@
+$(function(){
+    $.ajax({
+        type:'get',
+        url:'my/orders/all',
+        data:{type:1},
+        dataType:'json',
+        success:function(result){
+            console.log(result)
+        }
+    })
+})

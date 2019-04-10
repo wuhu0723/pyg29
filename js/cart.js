@@ -105,7 +105,6 @@ $(function () {
         var list = $('.order_list').find("[type='checkbox']").not(':checked').parents('.order-singer')
         syncCart(list)
         init()
-
     })
 
     // 生成订单
@@ -133,6 +132,7 @@ $(function () {
             dataType:'json',
             success:function(result){
                 console.log(result)
+                location.href = './orderList.html'
             }
         })
     })
