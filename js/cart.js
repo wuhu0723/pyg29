@@ -75,8 +75,9 @@ $(function () {
 
 
     // 计算总价
+    var total
     function calcTotalPrice() {
-        var total = 0
+        total = 0
         // 1.获取所有商品列表
         var allOrders = $('.order-singer')
         allOrders.each(function (index, value) {
@@ -105,5 +106,49 @@ $(function () {
         syncCart(list)
         init()
 
+    })
+
+    // 生成订单
+    $('.pyg_createOrder').on('tap',function(){
+        // 最关键的就是生成后台接口所需要的数据
+        var order = {
+            "order_price":total,
+            "consignee_addr":$('.userAddress').text(),
+            "goods":[]
+        }
+        var allOrders = $('.order-singer')
+        allOrders.each(function (index, value) {
+            var singer = {}
+            var temp = $(value).data('order')
+            singer.goods_id = temp.goods_id
+            singer.goods_number = temp.amount
+            singer.goods_price = temp.goods_price
+            order.goods.push(singer)
+        })
+        console.log(order)
+        $.ajax({
+            type:'post',
+            url:'my/orders/create',
+            data:order,
+            dataType:'json',
+            success:function(result){
+                console.log(result)
+            }
+        })
+    })
+
+    $('.selectAddress').on('tap',function(){
+        // 使得picker进行地址选择
+        // 1.创建对象，设置为三级联动
+        var picker = new mui.PopPicker({
+            layer: 3
+        }); 
+        // 2.给picker对象添加数据,添加的数据只能是数组
+        picker.setData(data)
+        // 3.显示picker，参数是一个回调函数，在回调函数有一个参数
+        picker.show(function (items) {
+            console.log(items);
+            $('.userAddress').text(items[0].text+"-"+items[1].text+"-"+items[2].text)
+          })
     })
 })
